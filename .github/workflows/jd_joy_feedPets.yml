@@ -28,10 +28,12 @@ jobs:
         run: |
           cd ~/scripts
           npm install
-      - name: '运行 【宠汪汪喂食脚本】'
+      - name: '运行 【宠汪汪喂食脚本及惊喜工厂及东东工厂机器电力挂机】'
         run: |
           cd ~/scripts
           node jd_joy_feedPets.js
+          node jd_dreamFactory_ele.js
+          node jd_jdfactory_ele.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}

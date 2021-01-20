@@ -31,6 +31,7 @@ jobs:
       - name: '运行 【京豆变动通知】'
         run: |
           cd ~/scripts
+          node jd_necklace.js
           node jd_bean_change.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}

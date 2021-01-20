@@ -6,7 +6,7 @@ name: jd_club_lottery
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 16 * * *'
+    - cron: '5 5,16 * * *'
   watch:
     types: started
   repository_dispatch:
