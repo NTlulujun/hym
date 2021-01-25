@@ -6,7 +6,7 @@ name: jd_dreamFactory_rabbit
 on:
   workflow_dispatch:
   schedule:
-    - cron: '50 5-14,17-22 * * *'
+    - cron: '50 0-2,5-14,17-22, * * *'
   watch:
     types: [started]
   repository_dispatch:
@@ -32,6 +32,8 @@ jobs:
         run: |
           cd ~/scripts
           node jd_dreamFactory_rabbit.js
+          node jd_dreamFactory_ele.js
+          node jd_jdfactory_ele.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}

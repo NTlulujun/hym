@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: jx_sign
+name: jd_immortal
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '1 9,17 * * *'
+    - cron: '1 8,16 * * *'
   watch:
     types: started
   repository_dispatch:
-    types: jx_sign
+    types: jd_immortal
 jobs:
   build:
 
@@ -20,6 +20,7 @@ jobs:
       - name: Checkout
         run: |
           git clone https://github.com/libinxwz/jd_scripts.git ~/scripts
+          sed -i "s/GITHUB/admin99.net/g" `grep GITHUB -rl ~/scripts`
       - name: Use Node.js 10.x
         uses: actions/setup-node@v1
         with:
@@ -28,10 +29,10 @@ jobs:
         run: |
           cd ~/scripts
           npm install
-      - name: '运行 【京喜签到】'
+      - name: '运行 京东神仙书院'
         run: |
           cd ~/scripts
-          node jx_sign.js
+          node jd_immortal.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
