@@ -38,7 +38,10 @@ jobs:
           node jd_health_community.js &
           node jd_health_energy.js &
           node jd_mother_jump.js &
-          node jd_super_redrain.js &
+          node jd_marketLottery.js &
+          node jd_super_redrain10.js &
+          node jd_super_redrain8.js &
+          node jd_live_lottery_social.js &
           wait
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
